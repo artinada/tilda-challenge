@@ -1,0 +1,20 @@
+{
+  "name": "tilda-challenge",
+  "version": "1.0.0",
+  "description": "Tilda QA engineer coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "testcafe:chrome": "testcafe chrome ./tests/ --reporter list",
+    "testcafe:chrome:headless": "testcafe chrome:headless ./tests/ -s takeOnFails=true",
+    "testcafe:mobile": "testcafe chrome:emulation:device='iPhone X' ./tests/",
+    "prettier": "prettier './src/**/*.ts'",
+    "prettier:fix": "prettier -w './src/**/*.ts'"
+  },
+  "author": "Nadiia Kamenska",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "prettier": "^2.3.0",
+    "testcafe": "^1.14.2"
+  }
+}
