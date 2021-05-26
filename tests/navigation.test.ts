@@ -21,7 +21,7 @@ test('go to quiz by name', async t => {
 	await t
 		.expect(quizPage.inputField.count).gt(1)
 		.expect(quizPage.checkedInput.exists).notOk()
-	// how to define it's a first question? should be shown a question's number?
+	// how to define it's a first question page? should be shown a question's number?
 	// should "navigateBackButton" be unavailable if it's the first question?
 	//	t.expect(quizPage.navigateBackButton().visible).notOk()
 })
@@ -31,22 +31,19 @@ test('go back to dashboard from quiz', async () => {
 	await quizPage.goBackToDashboardPage()
 })
 
-test('navigate to the next question and go back to dashboard', async t => {
+test('navigate to the next question and go back to dashboard', async () => {
 	await goToQuizWithName(quizName)
 	await quizPage.goToNextQuestionPage()
-
-	// check that question page has changed
-	t.wait(500)
+	// here should be a check that question page has changed
 	await quizPage.goBackToDashboardPage()
 })
 
 test('navigate to the next question and go to the previous question', async t => {
 	await goToQuizWithName(quizName)
 	await quizPage.goToNextQuestionPage()
-	// check that question has changed
-	t.wait(500)
+	// here should be a check that question page has changed
 	await quizPage.goToPreviousQuestionPage
-	t.expect(dashboardPage.header.innerText).eql(quizName)
+	await t.expect(dashboardPage.header.innerText).eql(quizName)
 })
 
 // should "navigateNextButton" be unavailable if it's the last question?
@@ -54,7 +51,7 @@ test.skip('navigate to the last question', async t => {
 	await goToQuizWithName(quizName)
 	await quizPage.goToNextQuestionPage()
 	await quizPage.goToNextQuestionPage()
-	t.expect(quizPage.navigateNextButton().visible).notOk()
+	await t.expect(quizPage.navigateNextButton().visible).notOk()
 })
 
 

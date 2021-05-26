@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "testcafe:chrome": "testcafe chrome ./tests/ --reporter list",
+    "testcafe:firefox": "testcafe firefox --reporter spec",
     "testcafe:chrome:headless": "testcafe chrome:headless ./tests/ -s takeOnFails=true",
-    "testcafe:mobile": "testcafe chrome:emulation:device='iPhone X' ./tests/",
+    "testcafe:iphone": "testcafe chrome:emulation:device='iPhone X' ./tests/",
     "prettier": "prettier './src/**/*.ts'",
     "prettier:fix": "prettier -w './src/**/*.ts'"
   },
