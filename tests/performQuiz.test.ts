@@ -88,11 +88,11 @@ test('answer only one question', async t => {
 	await t.expect(currentScore).eql('Score: 1/3')
 })
 
-// go back and change answer (to correct)
+// TODO go back and change answer (to correct), finish quiz
 
-// go back and change answer (to incorrect)
+// TODO go back and change answer (to incorrect), finish quiz
 
-// don't give any answer
+// TODO don't give any answer, finish quiz
 
 
 
